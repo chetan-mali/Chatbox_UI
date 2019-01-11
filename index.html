@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Live Chat</title>
+	<script src="jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+	<script>
+	/*function myFunction() {
+		var msg = document.forms["myform"]["msg"].value;
+	  	var msg_div = document.createElement("DIV");
+	  	var t = document.createTextNode(msg);
+	  	msg_div.appendChild(t);
+	  	var a=document.getElementById('chatmessage')
+	  	a.appendChild(msg_div);
+	  }*/
+	  function myFunction() {
+	  	  var msg = document.forms["myform"]["msg"].value;
+		  var c_div = document.createElement("DIV");
+		  c_div.setAttribute('class','chat-message clearfix');
+		  var img_tag = document.createElement("IMG");
+		  img_tag.setAttribute('src', 'pu.jpg');
+		  img_tag.setAttribute('alt','noimage');
+		  img_tag.setAttribute('width','32');
+		  img_tag.setAttribute('height','32');
+		  var c_inner_div= document.createElement("DIV");
+		  c_inner_div.setAttribute('class','chat-message-content clearfix')
+		  var c_i_span=document.createElement("SPAN");
+		  c_i_span.setAttribute('class','chat-time');
+		  var s1 = document.createTextNode("13:35");
+		  c_i_span.appendChild(s1);
+		  var c_i_h5= document.createElement("H5");
+		  var h5 = document.createTextNode("John");
+		  c_i_h5.appendChild(h5)
+		  var para = document.createElement("P");
+		  para.setAttribute('id', 'display_msg');
+		  var t = document.createTextNode(msg);
+		  para.appendChild(t);
+		  c_div.appendChild(img_tag);
+		  c_inner_div.append(c_i_span);
+		  c_inner_div.append(h5);
+		  c_inner_div.appendChild(para);
+		  c_div.append(c_inner_div);
+		  var hr = document.createElement("HR");
+		  document.getElementById("chatmessage").appendChild(c_div);
+		  document.getElementById("chatmessage").appendChild(hr)
+		}
+
+	</script>
+	<div id="live-chat">
+		
+		<header class="clearfix">
+			
+			<a href="#" class="chat-close">x</a>
+
+			<h4>Poornima University</h4>
+
+			<span class="chat-message-counter">3</span>
+
+		</header>
+
+		<div class="chat">
+			
+			<div class="chat-history" id="chatmessage">
+				<!-- <div id="chatmessage"></div> -->
+			</div> <!-- end chat-history -->
+
+			<form name="myform" >
+
+				<fieldset>
+					
+					<input name="msg" type="text" placeholder="Type your message…" autofocus>
+					<input type="hidden">
+
+				</fieldset>
+				<button type="button" onclick="myFunction()">Try it</button>
+
+			</form>
+
+		</div> <!-- end chat -->
+
+	</div> <!-- end live-chat -->
+
+	<script src="index.js"></script>
+	
+</body>
+</html>
